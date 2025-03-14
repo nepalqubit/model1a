@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- App icon for RevX Assistant, based on the Dribbble video inspiration -->
+  <rect width="512" height="512" rx="128" fill="#0F1B3D"/>
+  <g transform="translate(100, 100) scale(1.2)">
+    <!-- Stylized R shape -->
+    <path d="M60 260H30V100H120C130 100 139 103 147 109C155 115 161 123 165 133C169 143 171 154 171 166C171 178 169 189 165 199C161 209 155 217 147 223C139 229 130 232 120 232H60V260Z" fill="#FF4A2D"/>
+    <path d="M60 205H115C120 205 124 204 127 201C130 198 132 194 134 189C136 184 137 179 137 173C137 167 136 162 134 157C132 152 130 148 127 145C124 142 120 141 115 141H60V205Z" fill="#0F1B3D"/>
+    
+    <!-- Stylized X -->
+    <path d="M260 100L180 260H140L220 100H260Z" fill="#255FE9"/>
+    <path d="M140 100L220 260H260L180 100H140Z" fill="#255FE9"/>
+  </g>
+</svg>

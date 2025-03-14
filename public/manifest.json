@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "RevX",
+  "name": "RevX Assistant",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,12 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#0F1B3D",
+  "background_color": "#FAFBFC",
+  "orientation": "portrait",
+  "scope": "/",
+  "description": "RevX help desk assistant providing information about services, policies, and company details.",
+  "dir": "ltr",
+  "lang": "en-US",
+  "categories": ["productivity", "business"]
 }

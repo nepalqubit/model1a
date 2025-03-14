@@ -111,10 +111,11 @@ function App() {
     setConversations(prev => [...prev, newConversation]);
     
     try {
-      // Process the message and get a response with first interaction context
       // Determine if this is the first interaction in this session
       const isFirstInteraction = conversations.length === 0;
-      const answer = await dataService.findAnswer(message, isFirstInteraction);
+      // Process the message and get a response
+      let answer = await dataService.findAnswer(message, isFirstInteraction);
+      answer = communicationService.formatAnswer(answer, isFirstInteraction);
       
       // Update the conversation with the actual answer
       setConversations(prev => 

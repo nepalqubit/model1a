@@ -1,5 +1,12 @@
 import { useState, useEffect, useCallback } from 'react';
 
+declare global {
+  interface Window {
+    SpeechRecognition: any;
+    webkitSpeechRecognition: any;
+  }
+}
+
 interface SpeechRecognitionHook {
   transcript: string;
   listening: boolean;
@@ -32,7 +39,7 @@ interface SpeechRecognitionAlternative {
 }
 
 // Get the SpeechRecognition constructor from window
-const SpeechRecognition = window.SpeechRecognition || (window as any).webkitSpeechRecognition;
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 const browserSupportsSpeechRecognition = !!SpeechRecognition;
 
 export function useSpeechRecognition(): SpeechRecognitionHook {

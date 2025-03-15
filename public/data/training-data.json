@@ -1,4 +1,176 @@
 {
+  "intents": {
+    "company_information": {
+      "name": "Who is RevX?",
+      "utterances": [
+        "Tell me about RevX.",
+        "What does RevX do?",
+        "Give me information on RevX.",
+        "Who is behind RevX?",
+        "What is RevX all about?"
+      ]
+    },
+    "services_offered": {
+      "name": "What services does RevX provide?",
+      "utterances": [
+        "List RevX's services.",
+        "What are RevX's main offerings?",
+        "Describe the services offered by RevX.",
+        "What solutions does RevX provide?",
+        "Tell me what RevX can do for me."
+      ]
+    },
+    "revenue_management": {
+      "name": "Tell me about revenue management services.",
+      "utterances": [
+        "What is revenue management?",
+        "How does RevX handle revenue management?",
+        "Explain RevX's revenue management services.",
+        "How can RevX help with revenue optimization?",
+        "Tell me about pricing strategies for hotels."
+      ]
+    },
+    "web_development": {
+      "name": "What is web development?",
+      "utterances": [
+        "Describe web development services.",
+        "How does RevX approach web development?",
+        "Tell me about RevX's web development offerings.",
+        "Can RevX build a website for my business?",
+        "What kind of websites does RevX create?"
+      ]
+    },
+    "hospitality_consulting": {
+      "name": "What does hospitality business consulting entail?",
+      "utterances": [
+        "Explain hospitality business consulting.",
+        "How can RevX assist with hospitality consulting?",
+        "What is included in hospitality business consulting services?",
+        "How can RevX improve my hotel's operations?",
+        "What hospitality solutions does RevX offer?"
+      ]
+    },
+    "social_media_management": {
+      "name": "How does social media management work?",
+      "utterances": [
+        "What is social media management?",
+        "Describe RevX's approach to social media management.",
+        "How can social media management benefit my business?",
+        "Can RevX handle my social media accounts?",
+        "How does RevX build brand awareness online?"
+      ]
+    },
+    "digital_marketing": {
+      "name": "What is digital marketing?",
+      "utterances": [
+        "Tell me about digital marketing services.",
+        "How does RevX implement digital marketing?",
+        "What digital marketing strategies does RevX use?",
+        "Can RevX help with online advertising?",
+        "How can RevX improve my online presence?"
+      ]
+    },
+    "channel_management": {
+      "name": "What is channel management?",
+      "utterances": [
+        "Explain channel management services.",
+        "How does RevX handle channel management?",
+        "Why is channel management important?",
+        "How can RevX optimize my OTA listings?",
+        "What benefits does channel management provide?"
+      ]
+    },
+    "contact_information": {
+      "name": "How can I contact RevX?",
+      "utterances": [
+        "Provide RevX's contact details.",
+        "Where is RevX located?",
+        "What is RevX's phone number?",
+        "How do I reach out to RevX?",
+        "What's the best way to contact RevX?"
+      ]
+    },
+    "headquarters_location": {
+      "name": "Where is RevX's headquarters?",
+      "utterances": [
+        "Where is RevX based?",
+        "Tell me about RevX's headquarters location.",
+        "What is the address of RevX's main office?",
+        "Where can I find RevX's office?",
+        "In which countries does RevX operate?"
+      ]
+    },
+    "email_contact": {
+      "name": "What is RevX's email address?",
+      "utterances": [
+        "Give me RevX's email contact.",
+        "How can I email RevX?",
+        "What is the contact email for RevX?",
+        "Where should I send an email inquiry?",
+        "What's RevX's email for business inquiries?"
+      ]
+    },
+    "client_testimonials": {
+      "name": "What do clients say about RevX?",
+      "utterances": [
+        "Share testimonials from RevX clients.",
+        "What feedback have clients given about RevX?",
+        "Tell me about RevX's client reviews.",
+        "Are there any success stories from RevX clients?",
+        "How satisfied are RevX's customers?"
+      ]
+    },
+    "blog_information": {
+      "name": "Does RevX have a blog?",
+      "utterances": [
+        "What topics does RevX's blog cover?",
+        "Where can I read RevX's blog posts?",
+        "Tell me about the latest blog post from RevX.",
+        "Does RevX share industry insights?",
+        "How often does RevX update their blog?"
+      ]
+    },
+    "case_studies": {
+      "name": "What case studies does RevX offer?",
+      "utterances": [
+        "Share RevX's case studies.",
+        "How has RevX helped other businesses?",
+        "Provide examples of RevX's successful projects.",
+        "Can I see some of RevX's work?",
+        "What results has RevX achieved for clients?"
+      ]
+    },
+    "featured_works": {
+      "name": "What are RevX's featured works?",
+      "utterances": [
+        "Show me RevX's featured projects.",
+        "Highlight some of RevX's best works.",
+        "What are the notable works of RevX?",
+        "What portfolio items is RevX proud of?",
+        "Can I see examples of RevX's work?"
+      ]
+    },
+    "business_help": {
+      "name": "How can RevX help my business?",
+      "utterances": [
+        "What solutions does RevX provide for businesses?",
+        "How does RevX support business growth?",
+        "In what ways can RevX assist my company?",
+        "What can RevX do for my business?",
+        "How will working with RevX benefit me?"
+      ]
+    },
+    "why_choose_revx": {
+      "name": "Why choose RevX?",
+      "utterances": [
+        "What makes RevX different from other consultants?",
+        "Why should I partner with RevX?",
+        "What are the benefits of working with RevX?",
+        "What's special about RevX's approach?",
+        "How does RevX stand out from competitors?"
+      ]
+    }
+  },
   "company_info": {
     "name": "RevX",
     "website": "www.revx.pro",
@@ -25,7 +197,15 @@
       "social media management",
       "digital marketing",
       "channel manager services"
-    ]
+    ],
+    "service_details": {
+      "revenue_management": "Strategic solutions to increase occupancy and maximize profitability through data-driven pricing strategies and market analysis.",
+      "web_development": "Customized websites using latest technology as per the requirement that align with brand identity and business goals, enhancing online presence and user engagement.",
+      "hospitality_business_consulting": "Expert consulting to unlock a hotel's potential through operational improvements and strategic planning.",
+      "social_media_management": "Enhancing online presence to build brand awareness through strategic content creation and community engagement.",
+      "digital_marketing": "Driving growth through innovative digital strategies that deliver qualified leads and high conversion rates.",
+      "channel_manager": "Ensuring seamless integration and optimal pricing across multiple OTA platforms for maximum visibility and bookings."
+    }
   },
   "faq": [
     {
@@ -34,7 +214,7 @@
     },
     {
       "question": "What is RevX's approach to web development?",
-      "answer": "RevX designs and develops fully customized WordPress websites that align with your brand identity and business goals."
+      "answer": "RevX designs and develops fully customized websites that align with your brand identity and business goals."
     },
     {
       "question": "How can RevX help my hotel increase revenue?",
@@ -291,15 +471,15 @@
       "joined": "2018"
     },
     {
-      "name": "Rajesh Kumar",
-      "position": "Head of Revenue Management",
-      "bio": "Rajesh specializes in optimizing revenue strategies for hospitality clients with a focus on data-driven decision making.",
+      "name": "Rochana Shrestha",
+      "position": "Executive Director",
+      "bio": "Rochana specializes in optimizing revenue strategies for hospitality clients with a focus on data-driven decision making.",
       "joined": "2019"
     },
     {
-      "name": "Priya Sharma",
-      "position": "Digital Marketing Director",
-      "bio": "Priya brings extensive experience in digital marketing and SEO optimization to help clients maximize their online presence.",
+      "name": "Sarina Maharjan",
+      "position": "Business Development Manager",
+      "bio": "Sarina brings extensive experience in digital marketing and SEO optimization to help clients maximize their online presence.",
       "joined": "2020"
     }
   ]

@@ -176,38 +176,63 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
   availableVoices,
   onVoiceChange
 }) => {
-  // Support only specific languages: US English, Chinese, Japanese, French, German, Korean, and Hindi
+  // Support only specific languages: US English, Chinese, Japanese, French, German, Korean, Hindi, and Malay
 
   // Filter voices to only include specific languages
-  const supportedLangCodes = ['en-US', 'zh', 'zh-CN', 'zh-HK', 'zh-TW', 'ja', 'ja-JP', 'fr', 'fr-FR', 'de', 'de-DE', 'ko', 'ko-KR', 'hi', 'hi-IN'];
+  const supportedLangCodes = ['en-US', 'zh', 'zh-CN', 'cmn-CN', 'ja', 'ja-JP', 'de', 'de-DE', 'ko', 'ko-KR', 'hi', 'hi-IN', 'ms', 'ms-MY'];
   
   // First filter by supported languages
   const languageFilteredVoices = availableVoices.filter(voice => 
     supportedLangCodes.some(langCode => voice.lang.startsWith(langCode))
   );
 
-  // Then prefer high-quality voices
-  const highQualityVoices = languageFilteredVoices.filter(voice => 
-    // Check for markers of higher quality voices
-    voice.name.includes('Enhanced') || 
-    voice.name.includes('Neural') || 
-    voice.name.includes('Premium') ||
-    voice.localService === true // Local voices are often higher quality
-  );
+  // Define preferred high-quality female voices by name patterns
+  const preferredVoicePatterns = [
+    // US English
+    'en-US-Wavenet-F', 'en-US-JessaNeural', 'Joanna', 'UK English Female',
+    // Hindi
+    'hi-IN-Wavenet-A',
+    // German
+    'de-DE-Wavenet-A',
+    // Chinese
+    'cmn-CN-Wavenet-A',
+    // Korean
+    'ko-KR-Wavenet-A',
+    // Malay
+    'ms-MY-Wavenet-A',
+    // Japanese
+    'ja-JP-Wavenet-A',
+    // General high-quality patterns
+    'Neural', 'Wavenet', 'Premium', 'Enhanced'
+  ];
 
-  // If we have high-quality voices, prioritize those, otherwise use all supported language voices
-  const qualityVoices = highQualityVoices.length > 0 ? highQualityVoices : languageFilteredVoices;
+  // Filter for best-quality female voices
+  const bestFemaleVoices = languageFilteredVoices.filter(voice => {
+    // Check if voice matches any of our preferred patterns
+    const matchesPreferredPattern = preferredVoicePatterns.some(pattern => 
+      voice.name.includes(pattern)
+    );
+    
+    // Check if voice has female indicators
+    const hasFemaleIndicator = 
+      voice.name.toLowerCase().includes('female') || 
+      voice.name.toLowerCase().includes('woman') ||
+      voice.name.toLowerCase().includes('girl') ||
+      // Many Wavenet-A and Neural voices are female
+      (voice.name.includes('Wavenet-A') || voice.name.includes('Neural'));
+    
+    return matchesPreferredPattern || hasFemaleIndicator;
+  });
   
-  // Filter for natural-sounding voices (often female voices sound more natural)
-  const naturalVoices = qualityVoices.filter(voice => 
+  // Use best female voices if available, otherwise fall back to any female-sounding voices
+  const femaleFallbackVoices = languageFilteredVoices.filter(voice => 
     voice.name.toLowerCase().includes('female') || 
     voice.name.toLowerCase().includes('woman') ||
-    voice.name.toLowerCase().includes('natural') ||
     voice.name.toLowerCase().includes('girl')
   );
   
-  // Use natural voices if available, otherwise use all quality voices
-  const displayVoices = naturalVoices.length > 0 ? naturalVoices : qualityVoices;
+  // Final display voices - prioritize best female voices
+  const displayVoices = bestFemaleVoices.length > 0 ? bestFemaleVoices : femaleFallbackVoices;
   
   return (
     <SettingsOverlay isOpen={isOpen} onClick={onClose}>
@@ -237,7 +262,7 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
           {voiceEnabled && (
             <>
               <SettingItem>
-                <SettingLabel htmlFor="voice-select">Select Voice (US English, Chinese, Japanese, French, German, Korean, Hindi)</SettingLabel>
+                <SettingLabel htmlFor="voice-select">Select Voice (US English, Chinese, Japanese, German, Korean, Hindi, Malay)</SettingLabel>
                 <SelectInput 
                   id="voice-select"
                   value={selectedVoice ? selectedVoice.name : ''}
